@@ -2,7 +2,7 @@ name: Daily Cat Bot
 
 on:
   schedule:
-    - cron: '15 20 * * * '  # Runs daily at 9 AM UTC (adjust as needed)
+    - cron: '20 20 * * *'  # Runs daily at 9 AM UTC (adjust as needed)
   workflow_dispatch:      # Allows manual triggering
 
 jobs:
