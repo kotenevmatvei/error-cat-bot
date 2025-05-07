@@ -5,7 +5,7 @@ from telegram import Bot
 import os
 
 TOKEN = os.getenv("TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+CHAT_IDS = os.getenv("CHAT_ID").split(" ")
 BASE_URL = os.getenv("BASE_URL")
 
 http_error_codes = [
@@ -27,9 +27,10 @@ config = configparser.ConfigParser()
 async def send_daily_content():
     index = random.choice(http_error_codes)
     url = BASE_URL + str(index)
-    await bot.send_photo(
-        chat_id=CHAT_ID, photo=url, caption="Here's your daily cat! 😺"
-    )
+    for chat_id in CHAT_IDS:
+        await bot.send_photo(
+            chat_id=chat_id, photo=url, caption="Here's your daily cat! 😺"
+        )
 
 if __name__ == "__main__":
     asyncio.run(send_daily_content())
