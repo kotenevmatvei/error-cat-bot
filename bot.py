@@ -1,10 +1,11 @@
 import configparser
 import asyncio
 from telegram import Bot
+import os
 
-TOKEN = "7473788085:AAHvmI39GnS9kDwThWCV8qbL7wPX8ShiiTM"
-CHAT_ID = 405557299
-BASE_URL = "https://http.cat/"
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
+BASE_URL = os.getenv("BASE_URL")
 
 http_error_codes = [
     100, 101, 102, 103,
