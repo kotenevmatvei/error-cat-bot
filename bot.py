@@ -24,27 +24,12 @@ bot = Bot(token=TOKEN)
 
 config = configparser.ConfigParser()
 
-# async def get_index():
-#     config.read("config.ini")
-#     index = config["index"]["index"] 
-#     return int(index)
-# 
-# async def increment_index():
-#     config.read("config.ini")
-#     index = int(config["index"]["index"]) 
-#     index += 1
-#     config["index"]["index"] = str(index)
-#     with open('config.ini', 'w') as configfile:
-#       config.write(configfile)
-
 async def send_daily_content():
-    # index = await get_index()
     index = random.choice(http_error_codes)
     url = BASE_URL + str(index)
     await bot.send_photo(
         chat_id=CHAT_ID, photo=url, caption="Here's your daily cat! 😺"
     )
-    # await increment_index()
 
 if __name__ == "__main__":
     asyncio.run(send_daily_content())
