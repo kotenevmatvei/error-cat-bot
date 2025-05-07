@@ -2,7 +2,7 @@ import configparser
 import asyncio
 from telegram import Bot
 
-TOKEN = "7799366445:AAHDIFlFp1IF6hpovq05IPg5aRL0CnXkdKU"
+TOKEN = "7473788085:AAHvmI39GnS9kDwThWCV8qbL7wPX8ShiiTM"
 CHAT_ID = 405557299
 BASE_URL = "https://http.cat/"
 
