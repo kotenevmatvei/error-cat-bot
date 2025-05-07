@@ -40,7 +40,7 @@ config = configparser.ConfigParser()
 async def send_daily_content():
     # index = await get_index()
     index = random.choice(http_error_codes)
-    url = BASE_URL + str(http_error_codes[index])
+    url = BASE_URL + str(index)
     await bot.send_photo(
         chat_id=CHAT_ID, photo=url, caption="Here's your daily cat! 😺"
     )
